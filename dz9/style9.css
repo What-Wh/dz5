@@ -1,0 +1,47 @@
+.main{
+    width: 400px;
+    height: 150px;
+    display: flex;
+}
+
+.blockRight{
+    width: 50%;
+    height: 150px;
+    background-color: blueviolet;
+}
+
+.blockLeft{
+    width: 50%;
+    height: 150px;
+    background-color: blueviolet;
+}
+
+#text{
+    display: none;
+}
+
+@keyframes leftDoor {
+    from{transform: rotateY(0deg) skewY(0deg);}
+    to{transform:  rotateY(30deg) skewY(40deg);}
+}
+
+@keyframes rightDoor {
+    from{transform: rotateY(0deg) skewY(0deg);}
+    to{transform:  rotateY(30deg) skewY(-40deg);}
+}
+
+.main:hover .blockLeft{
+    animation: leftDoor 2s infinite linear;
+}
+
+.main:hover .blockRight{
+    animation: rightDoor 2s infinite linear;
+}
+
+.main:hover #text{
+    display: unset;
+    position: absolute;
+    top: 75px;
+    left: 200px;
+    transform: translate(-50%, -50%);
+}
